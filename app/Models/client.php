@@ -27,16 +27,16 @@ class client extends Model
 
     public function units(): HasMany
     {
-        return $this->hasMany(unit::class);
+        return $this->hasMany(Unit::class);
     }
 
     public function transactions(): HasMany
     {
-        return $this->hasMany(transaction::class);
+        return $this->hasMany(Transaction::class);
     }
 
     public function users(): BelongsTo
     {
-        return $this->belongsTo(user::class);
+        return $this->belongsTo(User::class);
     }
 }
