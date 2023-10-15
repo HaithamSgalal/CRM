@@ -17,10 +17,30 @@ class unit extends Model
     {
         return $this->hasMany(Transaction::class);
     }
+    protected  $fillable = [
+        'unit_number',
+        'building_number',
+        'street_name',
+        'city',
+        'type',
+        'price',
+        'square_feet',
+        'bedrooms',
+        'bathrooms',
+        'garage',
+        'pool',
+        'description',
+        'status'
+    ];
+
 
 
     public function clients(): BelongsTo
     {
         return $this->belongsto(Client::class);
+    }
+    public function photos(): HasMany
+    {
+        return $this->hasMany(UnitPhoto::class);
     }
 }

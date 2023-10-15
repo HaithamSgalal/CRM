@@ -23,8 +23,10 @@ class ClientController extends Controller
         $data = $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:clients'],
-            'contact_num_one' => ['required', 'regex:/^[0-9]{11}$/'],
-            'contact_num_two' => ['regex:/^[0-9]{11}$/'],
+            // 'contact_num_one' => ['required', 'regex:/^[0-9]{11}$/'],
+            // 'contact_num_two' => ['regex:/^[0-9]{11}$/'],
+            'contact_num_one' => 'required|max:255|string',
+            'contact_num_two' => 'nullable',
             'address' => ['required', 'string', 'max:255'],
         ]);
         Client::create($data);
@@ -47,8 +49,10 @@ class ClientController extends Controller
         $data = $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255'],
-            'contact_num_one' => ['required', 'regex:/^[0-9]{11}$/'],
-            'contact_num_two' => ['regex:/^[0-9]{11}$/'],
+            'contact_num_one' => ['required'],
+            // 'contact_num_one' => ['required', 'regex:/^[0-9]{11}$/'],
+            // 'contact_num_two' => ['regex:/^[0-9]{11}$/'],
+            'contact_num_two' => 'nullable',
             'address' => ['required', 'string'],
             'status' => 'required'
         ]);
