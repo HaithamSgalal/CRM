@@ -5,6 +5,7 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -12,7 +13,8 @@ use Laravel\Sanctum\HasApiTokens;
 class User extends Authenticatable
 {
 
-
+    use SoftDeletes ; 
+    
     use HasApiTokens, HasFactory, Notifiable;
 
     public function clients ():HasMany
@@ -32,9 +34,21 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+
         'name',
         'email',
-        'password',
+        'address',
+        'title',
+        'city' ,
+        'contact_num_one' ,
+        'contact_num_two' ,
+        'project' ,
+        'hiring_date' ,
+        'role' ,
+        'password' , 
+        'profile_picture'
+
+
     ];
 
     /**
@@ -43,6 +57,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $hidden = [
+        
         'password',
         'remember_token',
     ];
