@@ -1,10 +1,10 @@
 <?php
 
-<<<<<<< HEAD
-use App\Http\Controllers\UserController;
-=======
 
->>>>>>> bc06e3fe88bd22cf40b2f899788002d6db416e3c
+use App\Http\Controllers\UserController;
+
+
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UnitController;
 use App\Http\Controllers\ClientController;
@@ -25,7 +25,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-<<<<<<< HEAD
+
 Route::get('/users',[UserController::class,'viewUsers'])->name('users') ; 
 Route::get('user/edit/{user:id}',[UserController::class,'editUser'])->name('edit.user') ; 
 Route::post('user/update/{id}',[UserController::class,'updateUser'])->name('update.user') ; 
@@ -35,7 +35,7 @@ Route::get('user/trashed' , [UserController::class , 'showTrashed'])->name('dele
 Route::get('user/clean/{id}' , [UserController::class , 'forcedelete'])->name('forcedelete.user') ;
 Route::get('user/restore/{id}' , [UserController::class , 'restore'])->name('restore.user') ;
 Route::post('user/create/new-user' , [UserController::class , 'createUser'])->name('load.user') ;
-=======
+
 Route::get('home', function () {
     return view('home');
 });
@@ -62,4 +62,4 @@ Route::controller(UnitController::class)->group(function () {
 // Route::resource('unitPhoto', UnitPhotoController::class);
 
 Route::get('unitPhoto/destroy/{id}', [UnitPhotoController::class, 'destroy'])->name('unitPhoto.destroy');
->>>>>>> bc06e3fe88bd22cf40b2f899788002d6db416e3c
+

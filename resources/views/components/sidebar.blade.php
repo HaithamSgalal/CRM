@@ -34,7 +34,7 @@
                 </li>
                 <li class="nav-small-cap">
                     <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-<<<<<<< HEAD
+
                     <span class="hide-menu">Operatios</span>
                 </li>
                 <li class="sidebar-item">
@@ -45,7 +45,7 @@
                   <i class="ti ti-article"></i>
                 </span>
                         <span class="hide-menu">Users add/view</span>
-=======
+
                     <span class="hide-menu">Units</span>
                 </li>
                 <li class="sidebar-item">
@@ -54,7 +54,7 @@
                             <i class="ti ti-layout-dashboard"></i>
                         </span>
                         <span class="hide-menu">All Units</span>
->>>>>>> bc06e3fe88bd22cf40b2f899788002d6db416e3c
+
                     </a>
 
 
@@ -70,11 +70,11 @@
 
 
             </ul>
-<<<<<<< HEAD
-            
-=======
 
->>>>>>> bc06e3fe88bd22cf40b2f899788002d6db416e3c
+            
+
+
+
         </nav>
         <!-- End Sidebar navigation -->
     </div>
