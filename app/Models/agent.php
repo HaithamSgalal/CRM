@@ -10,10 +10,8 @@ class agent extends Model
 {
     use HasFactory;
 
-    public  function users () : HasOne
+    public  function users(): HasOne
     {
-        return $this->hasOne(user::class) ;
+        return $this->hasOne(User::class);
     }
-
-
 }

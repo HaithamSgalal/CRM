@@ -11,20 +11,18 @@ class transaction extends Model
 {
     use HasFactory;
 
-    public function clients () : BelongsTo
+    public function clients(): BelongsTo
     {
-        return $this->belongsTo(client::class);
+        return $this->belongsTo(Client::class);
     }
 
-    public function users () : BelongsTo
+    public function users(): BelongsTo
     {
-        return $this->belongsTo(user::class);
+        return $this->belongsTo(User::class);
     }
 
-    public function units () : BelongsTo
+    public function units(): BelongsTo
     {
-        return $this->belongsTo(unit::class);
+        return $this->belongsTo(Unit::class);
     }
-
-
 }

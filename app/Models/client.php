@@ -13,21 +13,30 @@ class client extends Model
 
     use HasFactory;
 
-    public function units ():HasMany
+    protected $fillable = [
+        'name',
+        'address',
+        'contact_num_one',
+        'contact_num_two',
+        'email',
+        'status',
+        'unit_id',
+        'user_id',
+        'notes',
+    ];
+
+    public function units(): HasMany
     {
-        return $this->hasMany(unit::class);
+        return $this->hasMany(Unit::class);
     }
 
-    public function transactions ():HasMany
+    public function transactions(): HasMany
     {
-        return $this->hasMany(transaction::class);
+        return $this->hasMany(Transaction::class);
     }
 
-    public function users (): BelongsTo
+    public function users(): BelongsTo
     {
-        return $this->belongsTo(user::class);
+        return $this->belongsTo(User::class);
     }
-
-
-
 }

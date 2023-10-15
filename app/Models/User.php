@@ -17,14 +17,14 @@ class User extends Authenticatable
     
     use HasApiTokens, HasFactory, Notifiable;
 
-    public function clients ():HasMany
+    public function clients(): HasMany
     {
-        return $this->hasMany(client::class);
+        return $this->hasMany(Client::class);
     }
 
-    public function sales ():HasMany
+    public function sales(): HasMany
     {
-        return $this->hasMany(transaction::class);
+        return $this->hasMany(Transaction::class);
     }
 
 
