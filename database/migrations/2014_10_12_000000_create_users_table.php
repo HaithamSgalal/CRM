@@ -15,22 +15,21 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
 
             $table->id();
-            $table->string('name',64);
-            $table->string('email',32)->unique();
-            $table->string('address',255);
-            $table->string('city',255);
-            $table->string('contact_num_one',15);
-            $table->string('contact_num_two',15)->nullable();
-            $table->string('title',64);
-            $table->string('project',64);
+            $table->string('name', 64);
+            $table->string('email', 32)->unique();
+            $table->string('address', 255);
+            $table->string('city', 255);
+            $table->string('contact_num_one', 50);
+            $table->string('contact_num_two', 50)->nullable();
+            $table->string('title', 64);
+            $table->string('project', 64);
             $table->date('hiring_date')->default(Carbon::now()->format('Y-m-d'));
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password',32);
-            $table->string('role',64);
+            $table->string('password', 255);
+            $table->string('role', 64);
             $table->string('profile_picture');
             $table->rememberToken();
             $table->timestamps();
-
         });
     }
 

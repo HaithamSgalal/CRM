@@ -143,14 +143,14 @@
                                             <img src="{{ Storage::url($photo->photo_path) }}" alt="Unit Photo"
                                                 class="mb-2" style="max-width: 150px;">
 
-                                            <a href="{{ route('unitPhoto.destroy', $photo->id) }}"
-                                                class="btn btn-danger btn-sm position-absolute top-0 end-0">x</a>
-                                            {{-- <form action="{{ route('unitPhoto.destroy', $photo->id) }}" method="post">
+                                            {{-- <a href="{{ route('unitPhoto.destroy', $photo->id) }}"
+                                                class="btn btn-danger btn-sm position-absolute top-0 end-0">x</a> --}}
+                                            <form action="{{ route('unitPhoto.destroy', $photo->id) }}" method="post">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit"
                                                     class="btn btn-danger btn-sm position-absolute top-0 end-0">x</button>
-                                            </form> --}}
+                                            </form>
                                         </div>
                                     @endforeach
                                 </div>

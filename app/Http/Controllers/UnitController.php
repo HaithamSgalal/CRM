@@ -63,7 +63,7 @@ class UnitController extends Controller
             }
         }
 
-        return redirect()->route('allUnits');
+        return redirect()->route('allUnits')->with('success', 'unit has been successfully created.');
     }
 
     /**
@@ -117,9 +117,8 @@ class UnitController extends Controller
                 ]);
             }
         }
-        return redirect()->route('allUnits');
+        return redirect()->route('allUnits')->with('success', 'unit has been successfully updated.');
     }
-
     /**
      * Remove the specified resource from storage.
      */
@@ -130,6 +129,6 @@ class UnitController extends Controller
         $unit->photos()->delete();
         $unit->delete();
 
-        return redirect()->route('allUnits');
+        return redirect()->route('allUnits')->with('failure', 'unit has been Deleted.');
     }
 }

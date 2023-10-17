@@ -30,7 +30,7 @@ class ClientController extends Controller
             'address' => ['required', 'string', 'max:255'],
         ]);
         Client::create($data);
-        return redirect()->route('allClients');
+        return redirect()->route('allClients')->with('success', 'clint has been successfully created.');
     }
     public function show(string $id)
     {
@@ -64,7 +64,7 @@ class ClientController extends Controller
             ]);
         }
         $client->update($data);
-        return redirect()->route('allClients');
+        return redirect()->route('allClients')->with('success', 'clint has been successfully updated.');
     }
 
     /**
@@ -74,6 +74,6 @@ class ClientController extends Controller
     {
         $client = Client::findOrfail($id);
         $client->delete();
-        return redirect()->route('allClients');
+        return redirect()->route('allClients')->with('failure', 'client has been Deleted.');
     }
 }

@@ -60,8 +60,8 @@ class UnitPhotoController extends Controller
      */
     public function destroy($photo_id)
     {
-        // UnitPhoto::destroy($photo_id);
-        // return back();
-        return $photo_id;
+        UnitPhoto::destroy($photo_id);
+        return back();
+        // return $photo_id;
     }
 }

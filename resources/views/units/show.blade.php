@@ -12,8 +12,8 @@
                             <div class="carousel-inner">
                                 @foreach ($unit->photos as $key => $photo)
                                     <div class="carousel-item {{ $key == 0 ? 'active' : '' }}" data-bs-interval="3000">
-                                        <img src="{{ Storage::url($photo->photo_path) }}" class="d-block w-100"
-                                            alt="Unit Photo">
+                                        <img src="{{ Storage::url($photo->photo_path) }}"
+                                            class="d-block rounded "style='width: 34em ;height:25em;' alt="Unit Photo">
                                     </div>
                                 @endforeach
                             </div>

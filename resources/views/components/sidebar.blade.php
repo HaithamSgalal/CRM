@@ -32,20 +32,31 @@
                         <span class="hide-menu">Create client</span>
                     </a>
                 </li>
+
                 <li class="nav-small-cap">
                     <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
 
-                    <span class="hide-menu">Operatios</span>
+                    <span class="hide-menu">Users</span>
+                </li>
+
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="{{ route('users') }}" aria-expanded="false">
+                        <span>
+                            <i class="ti ti-article"></i>
+                        </span>
+                        <span class="hide-menu">All Users</span>
+                    </a>
                 </li>
                 <li class="sidebar-item">
-
-
-                    <a class="sidebar-link" href="{{ route('users') }}" aria-expanded="false">
-                <span>
-                  <i class="ti ti-article"></i>
-                </span>
-                        <span class="hide-menu">Users add/view</span>
-
+                    <a class="sidebar-link" href="{{ route('create.user') }}" aria-expanded="false">
+                        <span>
+                            <i class="ti ti-article"></i>
+                        </span>
+                        <span class="hide-menu">Create Users</span>
+                    </a>
+                </li>
+                <li class="nav-small-cap">
+                    <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                     <span class="hide-menu">Units</span>
                 </li>
                 <li class="sidebar-item">
@@ -54,10 +65,7 @@
                             <i class="ti ti-layout-dashboard"></i>
                         </span>
                         <span class="hide-menu">All Units</span>
-
                     </a>
-
-
                 </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="{{ route('createUnits') }}" aria-expanded="false">
@@ -71,7 +79,7 @@
 
             </ul>
 
-            
+
 
 
 

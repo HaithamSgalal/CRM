@@ -10,7 +10,7 @@ class UserController extends Controller
 
     public function create()
     {
-        return view('create-user');
+        return view('users.create-user');
     }
 
     public function createUser(Request $request)
@@ -29,36 +29,30 @@ class UserController extends Controller
             'role' => 'required',
             'password'  => 'required|min:8',
             'profile_picture' => 'required|image'
-
         ]);
 
         $path = $request->file('profile_picture')->store('public/avatar');
         $user['profile_picture'] = $path;
         User::create($user);
-        return redirect()->route('create.user')->with('success', 'user added successfully');
+        return redirect()->route('users')->with('success', 'user added successfully');
         //return $path;
-
     }
-
     public function viewUsers()
     {
-
         $users = User::all();
-        return view('users', compact('users'));
+        return view('users.users', compact('users'));
     }
-
     public function editUser(User $user)
     {
-        return view('edit-user', compact('user'));
+        return view('users.edit-user', compact('user'));
     }
 
     public function updateUser(Request $request, $id)
     {
 
-        $user = User::findorFail($request->id);
+        $user = User::findorFail($id);
 
         $user->update([
-
             'name' => $request->name,
             'email' => $request->email,
             'address' => $request->address,
@@ -68,9 +62,7 @@ class UserController extends Controller
             'project' => $request->project,
             'hiring_date'  => $request->hiring_date,
             'role' => $request->role
-
         ]);
-
         return  redirect()->route('users')->with('success', 'user has been successfully updated.');
     }
 
@@ -78,13 +70,13 @@ class UserController extends Controller
     {
         $user = User::find($id);
         $user->delete();
-        return redirect()->route('users')->with('failure', 'user has been Deleted.');;
+        return redirect()->route('users')->with('failure', 'user has been Deleted.');
     }
 
     public function showTrashed()
     {
         $trashes = User::onlyTrashed()->get();
-        return view('users-softdelete', compact('trashes'));
+        return view('users.users-softdelete', compact('trashes'));
     }
 
     public function restore($id)
@@ -100,5 +92,4 @@ class UserController extends Controller
         $user->forcedelete();
         return redirect()->back()->with('failure', 'User Has Been Deleted.');
     }
-    
 }

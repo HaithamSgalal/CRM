@@ -5,13 +5,10 @@
         <a class="link ms-2" href="{{ route('create.user') }}">Create User</a>
         <a class="link ms-2" href="{{ route('deleted.user') }}">Deleted Users</a>
     </div>
-
-
     <table class="table  table-striped ms-0  w-100">
-
         <thead class="table-light">
             <tr class="table-dark">
-                <th>id</th>
+                <th>Image</th>
                 <th>Name</th>
                 <th>E-mail</th>
                 <th>address</th>
@@ -29,7 +26,8 @@
         <tbody>
             @foreach ($users as $user)
                 <tr>
-                    <td><img src="{{ Storage::url($user->profile_picture) }}" alt="" srcset="" width="50"></td>
+                    <td><img src="{{ Storage::url($user->profile_picture) }}" alt="" srcset="" width="50">
+                    </td>
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->email }}</td>
                     <td>{{ $user->address }}</td>
